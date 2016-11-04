@@ -2,4 +2,4 @@
 
 require_relative '../lib/Best_xbox_games.rb'
 
-Best_xbox_games::CLI.new
+Best_xbox_games::CLI.new.call
