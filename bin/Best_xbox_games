@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/Best_xbox_games.rb'
+
+Best_xbox_games::CLI.new
