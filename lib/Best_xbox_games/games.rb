@@ -1,22 +1,25 @@
 class Best_xbox_games::Games
 
-  attr_accessor :name, :rank, :description, :url
+  attr_accessor :other, :rankCity, :description
 
   @@all = []
 
   def self.new_from_index_page(r)
     self.new(
-      r.css("td.rank a")..attribute("href").text,
-      r.css("td.title a").attribute("href"),
-      r.css("td.title").text,
+      r.css("h3.slide-title").text,
+      r.css("p:first").text + " " + r.css("p:nth-of-type(2)").text  + " " + r.css("p:nth-of-type(3)").text +  " "+ r.css("p:nth-of-type(4)").text, 
+      ##+ " " + r.css("p:third").text + " " + r.css("p:fourth").text ,
+      r.css("p span:nth-child(3)").text
         )
+
   end
 
-  def initialize(rank=nil, url=nil, name=nil)
-    @name = name
-    @url = url
-    @rank = rank
+  def initialize(rankCity=nil, other=nil, description=nil)
+    @description = description
+    @other = other
+    @rankCity = rankCity
     @@all << self
+
   end
 
   def self.all
@@ -25,10 +28,6 @@ class Best_xbox_games::Games
 
   def self.find(id)
     self.all[id-1]
-  end
-
-  def description
-    @description ||= doc.xpath("//div[@class='blurb blurb_collapsed']").text
   end
 
   def doc
