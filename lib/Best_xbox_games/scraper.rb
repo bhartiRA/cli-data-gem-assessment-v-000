@@ -11,7 +11,14 @@ class Best_xbox_games::Scraper
   def make_games
     scrape_game_index.each do |r|
 
-    Best_xbox_games::Games.new_from_index_page(r)
+    Best_xbox_games::Games.new(
+      r.css("h3.slide-title").text,
+      r.css("p:first").text.split(":")[1] ,
+      r.css("p:nth-of-type(2)").text.split("$")[1] ,
+      r.css("p:nth-of-type(3)").text.split(":")[1] ,
+      r.css("p:nth-of-type(4)").text.split(":")[1],
+      r.css("p span:nth-child(3)").text
+        )
     end
 
   end
