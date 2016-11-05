@@ -77,7 +77,7 @@ class Best_xbox_games::CLI
     puts "             Cities #{from_number} - #{from_number+9} "
     120.times do print "*" end
     puts ""
-    puts " No.           rank city"
+    puts "No.           rank city"
     Best_xbox_games::Games.all[from_number-1, 10].each.with_index(from_number) do |game, index|
     puts "#{index}.        #{game.rank_city.split(".")[1]}"
     end
