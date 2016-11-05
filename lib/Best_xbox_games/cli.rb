@@ -2,11 +2,12 @@ class Best_xbox_games::CLI
 
   def call
     Best_xbox_games::Scraper.new.make_games
-    puts "Welcome to the 50 Best cities to live in America 2016"
     start
   end
 
   def start
+    print  %x{clear}
+    puts "Welcome to the 50 Best cities to live in America 2016"
     puts ""
     puts "What number city would you like to see?"
     puts "a) 1-10"
@@ -14,7 +15,7 @@ class Best_xbox_games::CLI
     puts "c) 21-30"
     puts "d) 31-40 "
     puts "e) 41-50"
-
+    puts "Enter the alphabet"
     input= ' '
     while !['a','b','c','d','e'].include?(input) do
      input = gets.strip
@@ -32,10 +33,11 @@ class Best_xbox_games::CLI
     when 'e'
       i=41
     end
+    print  %x{clear}
     show_cities(i)
 
     puts ""
-    puts "What city would you like more information on? Enter the number"
+    puts "Which city would you like more information about? Enter the number"
 
     input1 = gets.strip
 
@@ -44,6 +46,10 @@ class Best_xbox_games::CLI
     show_city(game)
 
     puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
     puts "Would you like to continue? Enter Y or N"
 
     input = gets.strip.downcase
@@ -51,12 +57,13 @@ class Best_xbox_games::CLI
       start
     else
       puts ""
-      puts "Thank you! Have a great day! bye"
+      puts "Thank you! Have a great day! Bye !"
       exit
     end
   end
 
   def show_city(game)
+    print  %x{clear}
     120.times do print "*" end
     puts "                      #{game.rank_city.upcase} "
     120.times do print "*" end

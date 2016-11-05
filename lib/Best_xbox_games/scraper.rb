@@ -9,15 +9,15 @@ class Best_xbox_games::Scraper
   end
 
   def make_games
-    scrape_game_index.each do |r|
-
+    scrape_game_index.each do |c|
+    city=  c.css("h3.slide-title").text
+    pop=  c.css("p:first").text.split(":")[1]
+    sal=  c.css("p:nth-of-type(2)").text.split("$")[1]
+    qual=  c.css("p:nth-of-type(3)").text.split(":")[1]
+    value=  c.css("p:nth-of-type(4)").text.split(":")[1]
+    desc=  c.css("p:nth-of-type(5)").text
     Best_xbox_games::Games.new(
-      r.css("h3.slide-title").text,
-      r.css("p:first").text.split(":")[1] ,
-      r.css("p:nth-of-type(2)").text.split("$")[1] ,
-      r.css("p:nth-of-type(3)").text.split(":")[1] ,
-      r.css("p:nth-of-type(4)").text.split(":")[1],
-      r.css("p span:nth-child(3)").text
+      city,pop,sal,qual,value,desc
         )
     end
 
