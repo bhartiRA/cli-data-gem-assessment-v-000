@@ -1,4 +1,4 @@
-module Best_xbox_games
+module BestCity
 end
 
 require_relative '../config/environment.rb'

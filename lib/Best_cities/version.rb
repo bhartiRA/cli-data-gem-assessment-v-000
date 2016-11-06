@@ -1,3 +1,3 @@
-module best_xbox_games
+module BestCity
   VERSION = "0.2.0"
 end

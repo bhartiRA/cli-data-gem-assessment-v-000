@@ -1,4 +1,4 @@
-class Best_xbox_games::Games
+class BestCity::City
 
   attr_accessor :population, :median_annual_salary,:quality_of_life ,:overall_value,:rank_city, :description
 
@@ -23,7 +23,4 @@ class Best_xbox_games::Games
     self.all[id-1]
   end
 
-  def doc
-    @doc ||= Nokogiri::HTML(open(self.url))
   end
-end

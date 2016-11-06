@@ -1,4 +1,4 @@
-class Best_xbox_games::Scraper
+class BestCity::Scraper
 
   def get_page
     Nokogiri::HTML(open("http://www.businessinsider.com/us-news-best-places-to-live-in-america-2016-3"))
@@ -16,7 +16,7 @@ class Best_xbox_games::Scraper
     qual=  c.css("p:nth-of-type(3)").text.split(":")[1]
     value=  c.css("p:nth-of-type(4)").text.split(":")[1]
     desc=  c.css("p:nth-of-type(5)").text
-    Best_xbox_games::Games.new(
+    BestCity::City.new(
       city,pop,sal,qual,value,desc
         )
     end

@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/Best_xbox_games.rb'
+require_relative '../lib/Best_cities.rb'
 
-Best_xbox_games::CLI.new.call
+BestCity::CLI.new.call
