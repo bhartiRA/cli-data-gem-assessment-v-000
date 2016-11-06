@@ -70,7 +70,7 @@ class BestCity::CLI
     puts ""
     puts "Population           #{city.population}"
     puts "Median Annual Salary #{city.median_annual_salary}"
-    puts "Quality of life      #{city}.quality_of_life}"
+    puts "Quality of life      #{city.quality_of_life}"
     puts "Overall value        #{city.overall_value}"
     puts ""
     puts "#{city.description}"
